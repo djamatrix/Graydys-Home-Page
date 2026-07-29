@@ -188,12 +188,12 @@ a {
   color: var(--ink-soft);
 }
 
-/* Brand is the hero-level signal — larger than supporting copy */
+/* Brand is the hero-level signal — larger than supporting copy; floor allows ~320px wrap */
 .hero__brand {
   margin: 0;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(3.2rem, 11vw, 7.5rem);
+  font-size: clamp(2.25rem, 12vw, 7.5rem);
   line-height: 0.92;
   letter-spacing: -0.045em;
 }
@@ -544,6 +544,71 @@ a {
 
 .reveal[data-reveal]:nth-child(4) {
   transition-delay: 0.24s;
+}
+
+/**
+ * Phone layout polish (≤640px):
+ * - Tighter hero packing so CTA stays reachable
+ * - Smaller header / brand tabs / about type
+ * - Drop brand-panel min-height when stacked
+ */
+@media (max-width: 640px) {
+  :root {
+    --header-h: 3.75rem;
+  }
+
+  .hero {
+    padding: calc(var(--header-h) + 1.25rem) clamp(1.15rem, 5vw, 2rem) 3rem;
+  }
+
+  .hero__eyebrow {
+    margin-bottom: 0.5rem;
+  }
+
+  .hero__lede {
+    margin-top: 1rem;
+  }
+
+  .hero__cta {
+    margin-top: 1.5rem;
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+
+  .brand-tab {
+    grid-template-columns: 2rem 1fr;
+    gap: 0.5rem;
+    padding: 0.85rem 0;
+  }
+
+  .brand-tab__name {
+    font-size: clamp(1.05rem, 4.5vw, 1.25rem);
+  }
+
+  .brand-panel {
+    min-height: 0;
+    padding: 1.35rem 1.25rem;
+  }
+
+  .about p {
+    font-size: clamp(1rem, 3.5vw, 1.1rem);
+  }
+}
+
+/**
+ * Short viewports: reduce bottom padding and hide scroll cue so hero content
+ * is not crowded against the fixed header and CTA.
+ */
+@media (max-height: 700px) {
+  .hero {
+    padding-bottom: 2.5rem;
+  }
+
+  .hero__scroll {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
