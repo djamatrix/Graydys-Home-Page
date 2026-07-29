@@ -1,15 +1,16 @@
 /**
  * Graydys, Inc. homepage styles
- * Direction: cool stone + copper accent, Syne/Outfit typography, layered atmosphere.
- * Avoids flat fills, purple gradients, cream/terracotta, and broadsheet layouts.
+ * Direction: classic ivory field + copper accent, Syne/Outfit typography, layered atmosphere.
+ * Avoids flat fills, purple gradients, and broadsheet layouts.
  */
 
 :root {
   --ink: #1a222c;
   --ink-soft: #3d4a5c;
-  --stone: #e8eef4;
-  --stone-deep: #c5d0dc;
-  --paper: #f4f7fa;
+  /* Warm ivory palette — --paper is CSS named ivory (#fffff0) */
+  --stone: #f5efe3;
+  --stone-deep: #e5dcc8;
+  --paper: #fffff0;
   --copper: #b86a3d;
   --copper-deep: #8f4d2a;
   --mist: rgba(255, 255, 255, 0.55);
@@ -35,10 +36,11 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
   color: var(--ink);
+  /* Full classic ivory field with soft warm depth (not cool blue-stone) */
   background:
-    radial-gradient(120% 80% at 10% -10%, #d9e6f2 0%, transparent 55%),
-    radial-gradient(90% 70% at 100% 0%, #f0ddd0 0%, transparent 45%),
-    linear-gradient(165deg, #eef3f8 0%, #dfe8f0 48%, #e6ebe8 100%);
+    radial-gradient(120% 80% at 10% -10%, #fff8e8 0%, transparent 55%),
+    radial-gradient(90% 70% at 100% 0%, #f3e8d4 0%, transparent 45%),
+    linear-gradient(165deg, #fffff0 0%, #f7f1e3 48%, #f0e8d6 100%);
   line-height: 1.55;
   overflow-x: hidden;
 }
@@ -71,7 +73,7 @@ a {
   justify-content: space-between;
   height: var(--header-h);
   padding: 0 clamp(1.25rem, 4vw, 3rem);
-  background: linear-gradient(to bottom, rgba(238, 243, 248, 0.92), transparent);
+  background: linear-gradient(to bottom, rgba(255, 255, 240, 0.92), transparent);
   backdrop-filter: blur(8px);
 }
 
