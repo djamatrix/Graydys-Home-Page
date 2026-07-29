@@ -131,50 +131,6 @@ a {
     );
 }
 
-/* Soft orbs animate as atmospheric motion anchors */
-.hero__orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(40px);
-  will-change: transform;
-}
-
-.hero__orb--a {
-  width: min(70vw, 640px);
-  height: min(70vw, 640px);
-  top: -8%;
-  right: -12%;
-  background: radial-gradient(circle, rgba(184, 106, 61, 0.35), transparent 70%);
-  animation: drift-a 18s var(--ease) infinite alternate;
-}
-
-.hero__orb--b {
-  width: min(55vw, 480px);
-  height: min(55vw, 480px);
-  bottom: 5%;
-  left: -10%;
-  background: radial-gradient(circle, rgba(90, 130, 160, 0.4), transparent 70%);
-  animation: drift-b 22s var(--ease) infinite alternate;
-}
-
-@keyframes drift-a {
-  from {
-    transform: translate(0, 0) scale(1);
-  }
-  to {
-    transform: translate(-6%, 8%) scale(1.08);
-  }
-}
-
-@keyframes drift-b {
-  from {
-    transform: translate(0, 0) scale(1);
-  }
-  to {
-    transform: translate(10%, -6%) scale(1.12);
-  }
-}
-
 .hero__content {
   position: relative;
   z-index: 1;
@@ -618,7 +574,6 @@ a {
     scroll-behavior: auto;
   }
 
-  .hero__orb,
   .hero__scroll span,
   .reveal,
   .brand-panel.is-switching .brand-panel__tag,
