@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Graydys, Inc. — home of Gradys Creative Studio, GR Aurea, Graydys Pet Supplies, RC Mania PH, and Graydys Beads Shop."
+    />
+    <title>Graydys, Inc.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Atmospheric grain overlay for depth without flat color -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="logo" href="#top" aria-label="Graydys, Inc. home">Graydys</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#brands">Brands</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <!-- Hero: brand-first composition — one name, one line, one CTA, full-bleed visual -->
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-brand">
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__orb hero__orb--a"></div>
+          <div class="hero__orb hero__orb--b"></div>
+          <div class="hero__mesh"></div>
+        </div>
+        <div class="hero__content">
+          <p class="hero__eyebrow reveal" data-reveal>A house of brands</p>
+          <h1 id="hero-brand" class="hero__brand reveal" data-reveal>
+            Graydys,&nbsp;Inc.
+          </h1>
+          <p class="hero__lede reveal" data-reveal>
+            Creative studios, lifestyle labels, and specialty shops under one roof.
+          </p>
+          <div class="hero__cta reveal" data-reveal>
+            <a class="btn btn--primary" href="#brands">Explore our brands</a>
+          </div>
+        </div>
+        <div class="hero__scroll" aria-hidden="true">
+          <span></span>
+        </div>
+      </section>
+
+      <!-- Interactive brand stage: selecting a brand updates the panel (interaction container) -->
+      <section id="brands" class="brands" aria-labelledby="brands-heading">
+        <div class="section-intro">
+          <h2 id="brands-heading" class="reveal" data-reveal>Our brands</h2>
+          <p class="reveal" data-reveal>
+            Select a brand to learn more. Links go live as each site launches.
+          </p>
+        </div>
+
+        <div class="brand-stage">
+          <ul class="brand-list" role="tablist" aria-label="Graydys brands">
+            <!-- Brand tabs are interactive controls; panel below is the paired stage -->
+            <li>
+              <button
+                type="button"
+                class="brand-tab is-active"
+                role="tab"
+                id="tab-gradys"
+                aria-selected="true"
+                aria-controls="panel-brand"
+                data-brand="gradys"
+              >
+                <span class="brand-tab__index">01</span>
+                <span class="brand-tab__name">Gradys Creative Studio</span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="brand-tab"
+                role="tab"
+                id="tab-aurea"
+                aria-selected="false"
+                aria-controls="panel-brand"
+                data-brand="aurea"
+              >
+                <span class="brand-tab__index">02</span>
+                <span class="brand-tab__name">GR Aurea</span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="brand-tab"
+                role="tab"
+                id="tab-pets"
+                aria-selected="false"
+                aria-controls="panel-brand"
+                data-brand="pets"
+              >
+                <span class="brand-tab__index">03</span>
+                <span class="brand-tab__name">Graydys Pet Supplies</span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="brand-tab"
+                role="tab"
+                id="tab-rc"
+                aria-selected="false"
+                aria-controls="panel-brand"
+                data-brand="rc"
+              >
+                <span class="brand-tab__index">04</span>
+                <span class="brand-tab__name">RC Mania PH</span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="brand-tab"
+                role="tab"
+                id="tab-beads"
+                aria-selected="false"
+                aria-controls="panel-brand"
+                data-brand="beads"
+              >
+                <span class="brand-tab__index">05</span>
+                <span class="brand-tab__name">Graydys Beads Shop</span>
+              </button>
+            </li>
+          </ul>
+
+          <article
+            id="panel-brand"
+            class="brand-panel"
+            role="tabpanel"
+            aria-labelledby="tab-gradys"
+            data-active="gradys"
+          >
+            <p class="brand-panel__tag" data-field="tag">Design &amp; production</p>
+            <h3 class="brand-panel__title" data-field="title">Gradys Creative Studio</h3>
+            <p class="brand-panel__body" data-field="body">
+              Brand systems, campaigns, and visual storytelling for businesses that want craft with clarity.
+            </p>
+            <a
+              class="btn btn--ghost brand-panel__link"
+              data-field="link"
+              href="#"
+              aria-disabled="true"
+              >Site coming soon</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="about" aria-labelledby="about-heading">
+        <div class="about__inner">
+          <h2 id="about-heading" class="reveal" data-reveal>One company. Many fronts.</h2>
+          <p class="reveal" data-reveal>
+            Graydys, Inc. builds and operates brands across creative services, lifestyle, pets, hobbies, and handmade goods—each with its own voice, shared under one house.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="site-footer__brand">Graydys, Inc.</p>
+      <p class="site-footer__meta">&copy; <span id="year"></span> All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
